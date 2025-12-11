@@ -368,41 +368,218 @@
   </div>
 
   <script>
-    // ---- BASIC INTERACTION STUBS (no real logic yet) ----
+  // ---- BASIC APP STATE ----
+  const appState = {
+    coords: {
+      // Default near Paço de Arcos if geolocation fails
+      lat: 38.691,
+      lon: -9.308
+    },
+    weather: {
+      tempC: null,
+      code: null,
+      label: 'checking…',
+      preferOutdoor: true,
+      preferIndoor: false
+    }
+  };
 
-    // Toggle active category pills
-    document.getElementById('category-group').addEventListener('click', (e) => {
-      if (!e.target.dataset.category) return;
-      [...document.querySelectorAll('#category-group .pill')].forEach(p => p.classList.remove('pill--active'));
-      e.target.classList.add('pill--active');
-    });
+  const weatherSummaryEl = document.getElementById('weather-summary');
 
-    // Toggle active time options
-    document.getElementById('time-group').addEventListener('click', (e) => {
-      if (!e.target.dataset.minutes) return;
-      [...document.querySelectorAll('#time-group .time-option')].forEach(p => p.classList.remove('time-option--active'));
-      e.target.classList.add('time-option--active');
-    });
+  // ---- CATEGORY + TIME UI HANDLERS (same as before) ----
 
-    // Use my location (placeholder)
-    document.getElementById('use-location').addEventListener('click', () => {
-      alert('Later: will use browser geolocation here.');
-    });
+  document.getElementById('category-group').addEventListener('click', (e) => {
+    if (!e.target.dataset.category) return;
+    [...document.querySelectorAll('#category-group .pill')]
+      .forEach(p => p.classList.remove('pill--active'));
+    e.target.classList.add('pill--active');
+  });
 
-    // Surprise me (placeholder)
-    document.getElementById('surprise-btn').addEventListener('click', () => {
-      // For now just flash a simple message;
-      // later this calls the random selection logic.
-      alert('Later: will pick a random feasible place based on your settings.');
-    });
+  document.getElementById('time-group').addEventListener('click', (e) => {
+    if (!e.target.dataset.minutes) return;
+    [...document.querySelectorAll('#time-group .time-option')]
+      .forEach(p => p.classList.remove('time-option--active'));
+    e.target.classList.add('time-option--active');
+  });
 
-    document.getElementById('another-btn').addEventListener('click', () => {
-      alert('Later: will pick a different place without re-asking for inputs.');
-    });
+  // ---- LOCATION HANDLING ----
 
-    document.getElementById('go-here-btn').addEventListener('click', () => {
-      alert('Later: will mark this as chosen and avoid re-suggesting it today.');
+  async function detectLocation() {
+    return new Promise((resolve) => {
+      if (!navigator.geolocation) {
+        console.warn('Geolocation not supported, using default coords.');
+        return resolve(false);
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          appState.coords.lat = pos.coords.latitude;
+          appState.coords.lon = pos.coords.longitude;
+          console.log('Using geolocation coords:', appState.coords);
+          resolve(true);
+        },
+        (err) => {
+          console.warn('Geolocation failed, using default coords.', err);
+          resolve(false);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 5000
+        }
+      );
     });
-  </script>
+  }
+
+  document.getElementById('use-location').addEventListener('click', async () => {
+    const ok = await detectLocation();
+    if (ok) {
+      alert('Location updated. I’ll use this point for travel and weather.');
+      loadWeather();
+    } else {
+      alert('Could not get your location. Using default Paço de Arcos area.');
+    }
+  });
+
+  // ---- WEATHER LOGIC ----
+
+  // Map Open-Meteo weather codes to a simple label
+  function classifyWeatherCode(code) {
+    const rainy = [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82];
+    const snowy = [71, 73, 75, 77, 85, 86];
+    const foggy = [45, 48];
+    const stormy = [95, 96, 99];
+
+    if (rainy.includes(code)) return 'rain';
+    if (snowy.includes(code)) return 'snow';
+    if (stormy.includes(code)) return 'storm';
+    if (foggy.includes(code)) return 'fog';
+    return 'clear';
+  }
+
+  function buildWeatherPreference(code) {
+    const type = classifyWeatherCode(code);
+    const prefs = {
+      preferOutdoor: true,
+      preferIndoor: false,
+      label: ''
+    };
+
+    if (type === 'rain' || type === 'storm') {
+      prefs.preferOutdoor = false;
+      prefs.preferIndoor = true;
+      prefs.label = 'rainy – indoor is better';
+    } else if (type === 'snow' || type === 'fog') {
+      prefs.preferOutdoor = false;
+      prefs.preferIndoor = true;
+      prefs.label = 'low visibility – indoor/mixed';
+    } else {
+      prefs.preferOutdoor = true;
+      prefs.preferIndoor = false;
+      prefs.label = 'good for outdoor & sun';
+    }
+
+    return prefs;
+  }
+
+  async function loadWeather() {
+    const { lat, lon } = appState.coords;
+
+    // Open-Meteo: free, no API key, includes current weather & timezone auto-detect
+    const url = `https://api.open-meteo.com/v1/forecast` +
+      `?latitude=${lat}&longitude=${lon}` +
+      `&current_weather=true&timezone=auto`;
+
+    try {
+      weatherSummaryEl.textContent = 'Weather: checking…';
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('Weather HTTP error ' + res.status);
+
+      const data = await res.json();
+      const cw = data.current_weather;
+      if (!cw) throw new Error('Missing current_weather');
+
+      const prefs = buildWeatherPreference(cw.weathercode);
+
+      appState.weather.tempC = cw.temperature;
+      appState.weather.code = cw.weathercode;
+      appState.weather.preferOutdoor = prefs.preferOutdoor;
+      appState.weather.preferIndoor = prefs.preferIndoor;
+      appState.weather.label = prefs.label;
+
+      const emoji = prefs.preferIndoor && !prefs.preferOutdoor
+        ? '🌧'
+        : '☀';
+
+      weatherSummaryEl.textContent =
+        `Weather: ${emoji} ${cw.temperature.toFixed(0)}°C, ${prefs.label}`;
+    } catch (err) {
+      console.error('Error loading weather', err);
+      appState.weather.label = 'unavailable';
+      weatherSummaryEl.textContent = 'Weather: unavailable';
+    }
+  }
+
+  // ---- PLACE SCORING HOOK (for later selection logic) ----
+  // Example usage later:
+  //   const score = scorePlaceForWeather(place, appState.weather);
+
+  function scorePlaceForWeather(place, weather) {
+    // place.indoorOutdoor: 'indoor' | 'outdoor' | 'mixed'
+    // place.goodInRain: boolean
+    // place.goodForSun: boolean
+
+    let score = 0;
+
+    if (!weather || weather.label === 'unavailable') {
+      // Neutral if we don't know the weather
+      return 0;
+    }
+
+    if (weather.preferIndoor) {
+      if (place.indoorOutdoor === 'indoor') score += 3;
+      if (place.indoorOutdoor === 'mixed') score += 2;
+      if (place.goodInRain) score += 2;
+      if (place.indoorOutdoor === 'outdoor' && !place.goodInRain) score -= 3;
+    }
+
+    if (weather.preferOutdoor) {
+      if (place.indoorOutdoor === 'outdoor') score += 3;
+      if (place.indoorOutdoor === 'mixed') score += 2;
+      if (place.goodForSun) score += 2;
+    }
+
+    return score;
+  }
+
+  // ---- ACTION BUTTONS (still placeholder behavior for now) ----
+
+  document.getElementById('surprise-btn').addEventListener('click', () => {
+    // Later: run selection pipeline.
+    // For now, just show that we know the weather context.
+    alert(
+      'Later this will pick a place.\n\n' +
+      'Weather preference right now:\n' +
+      (appState.weather.preferIndoor ? '- Prefer INDOOR options\n' : '') +
+      (appState.weather.preferOutdoor ? '- Prefer OUTDOOR / SUN options\n' : '') +
+      (appState.weather.label ? `\n(${appState.weather.label})` : '')
+    );
+  });
+
+  document.getElementById('another-btn').addEventListener('click', () => {
+    alert('Later: will pick a different place without resetting filters.');
+  });
+
+  document.getElementById('go-here-btn').addEventListener('click', () => {
+    alert('Later: will mark this place as “done today” so it is less likely to be suggested again.');
+  });
+
+  // ---- INITIALIZE ON LOAD ----
+  (async function init() {
+    // Try to detect location once on load for better weather + travel estimates
+    await detectLocation();
+    await loadWeather();
+  })();
+</script>
 </body>
 </html>

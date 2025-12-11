@@ -367,7 +367,20 @@
     </footer>
   </div>
 
-  <script>
+ <script>
+  // ---- CONSTANTS ----
+  const PLACES_STORAGE_KEY = 'whereNow_places_v1';
+  const SEEN_STORAGE_KEY = 'whereNow_seen_v1';
+
+  const BASE_LOCATIONS = {
+    paco: { lat: 38.691, lon: -9.308 },         // Paço de Arcos
+    lisbon: { lat: 38.7223, lon: -9.1393 },     // Lisbon center
+    cascais: { lat: 38.6979, lon: -9.4218 },    // Cascais
+    caparica: { lat: 38.642, lon: -9.232 },     // Costa da Caparica
+    sesimbra: { lat: 38.444, lon: -9.101 },     // Sesimbra
+    setubal: { lat: 38.524, lon: -8.888 }       // Setúbal
+  };
+
   // ---- BASIC APP STATE ----
   const appState = {
     coords: {
@@ -381,12 +394,114 @@
       label: 'checking…',
       preferOutdoor: true,
       preferIndoor: false
-    }
+    },
+    places: [],
+    placesLoaded: false,
+    selectedPlace: null
   };
 
   const weatherSummaryEl = document.getElementById('weather-summary');
+  const metaSummaryEl = document.getElementById('meta-summary');
 
-  // ---- CATEGORY + TIME UI HANDLERS (same as before) ----
+  const nameEl = document.getElementById('place-name');
+  const catEl = document.getElementById('place-category');
+  const ratingEl = document.getElementById('place-rating');
+  const weatherTagEl = document.getElementById('place-weather-tag');
+  const statusEl = document.getElementById('place-status');
+  const descEl = document.getElementById('place-description');
+  const distanceEl = document.getElementById('place-distance');
+  const gmapsEl = document.getElementById('gmaps-link');
+
+  // ---- SMALL HELPERS ----
+
+  function todayKey() {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  function minutesSinceMidnight(d) {
+    return d.getHours() * 60 + d.getMinutes();
+  }
+
+  function parseTimeToMinutes(hhmm) {
+    const [h, m] = hhmm.split(':').map(Number);
+    return h * 60 + m;
+  }
+
+  function formatMinutesToHHMM(mins) {
+    const h = Math.floor(mins / 60) % 24;
+    const m = mins % 60;
+    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+  }
+
+  function haversineKm(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const toRad = (deg) => deg * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  function getSelectedCategory() {
+    const active = document.querySelector('#category-group .pill--active');
+    return active ? active.dataset.category : 'wildcard';
+  }
+
+  function getSelectedTimeMinutes() {
+    const active = document.querySelector('#time-group .time-option--active');
+    return active ? Number(active.dataset.minutes) : 60;
+  }
+
+  function getOriginCoords() {
+    // Prefer geolocation if available; otherwise fall back to base dropdown.
+    const baseKey = document.getElementById('base-location').value;
+    const base = BASE_LOCATIONS[baseKey] || BASE_LOCATIONS.paco;
+
+    if (appState.coords && typeof appState.coords.lat === 'number') {
+      return appState.coords;
+    }
+    return base;
+  }
+
+  // ---- SEEN-TODAY HANDLING ----
+
+  function loadSeenToday() {
+    const raw = localStorage.getItem(SEEN_STORAGE_KEY);
+    if (!raw) return { date: todayKey(), ids: [] };
+
+    try {
+      const parsed = JSON.parse(raw);
+      if (!parsed.date || parsed.date !== todayKey()) {
+        return { date: todayKey(), ids: [] };
+      }
+      if (!Array.isArray(parsed.ids)) return { date: todayKey(), ids: [] };
+      return parsed;
+    } catch {
+      return { date: todayKey(), ids: [] };
+    }
+  }
+
+  function saveSeenToday(seen) {
+    localStorage.setItem(SEEN_STORAGE_KEY, JSON.stringify(seen));
+  }
+
+  function markPlaceSeen(placeId) {
+    const seen = loadSeenToday();
+    if (!seen.ids.includes(placeId)) {
+      seen.ids.push(placeId);
+      saveSeenToday(seen);
+    }
+  }
+
+  // ---- CATEGORY + TIME UI HANDLERS ----
 
   document.getElementById('category-group').addEventListener('click', (e) => {
     if (!e.target.dataset.category) return;
@@ -442,7 +557,6 @@
 
   // ---- WEATHER LOGIC ----
 
-  // Map Open-Meteo weather codes to a simple label
   function classifyWeatherCode(code) {
     const rainy = [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82];
     const snowy = [71, 73, 75, 77, 85, 86];
@@ -484,7 +598,6 @@
   async function loadWeather() {
     const { lat, lon } = appState.coords;
 
-    // Open-Meteo: free, no API key, includes current weather & timezone auto-detect
     const url = `https://api.open-meteo.com/v1/forecast` +
       `?latitude=${lat}&longitude=${lon}` +
       `&current_weather=true&timezone=auto`;
@@ -520,19 +633,10 @@
     }
   }
 
-  // ---- PLACE SCORING HOOK (for later selection logic) ----
-  // Example usage later:
-  //   const score = scorePlaceForWeather(place, appState.weather);
-
   function scorePlaceForWeather(place, weather) {
-    // place.indoorOutdoor: 'indoor' | 'outdoor' | 'mixed'
-    // place.goodInRain: boolean
-    // place.goodForSun: boolean
-
     let score = 0;
 
     if (!weather || weather.label === 'unavailable') {
-      // Neutral if we don't know the weather
       return 0;
     }
 
@@ -552,33 +656,292 @@
     return score;
   }
 
-  // ---- ACTION BUTTONS (still placeholder behavior for now) ----
+  // ---- PLACES LOADING (from data/places.json + localStorage cache) ----
+
+  async function loadPlaces() {
+    const cached = localStorage.getItem(PLACES_STORAGE_KEY);
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          appState.places = parsed;
+          appState.placesLoaded = true;
+          updateMetaSummary();
+          console.log('Loaded places from localStorage:', parsed.length);
+          return;
+        }
+      } catch (e) {
+        console.warn('Failed to parse cached places, refetching...', e);
+      }
+    }
+
+    try {
+      const res = await fetch('./data/places.json');
+      if (!res.ok) throw new Error('Failed to fetch places.json: ' + res.status);
+      const list = await res.json();
+      if (!Array.isArray(list)) throw new Error('places.json is not an array');
+
+      appState.places = list;
+      appState.placesLoaded = true;
+      localStorage.setItem(PLACES_STORAGE_KEY, JSON.stringify(list));
+      console.log('Loaded places from network:', list.length);
+
+      updateMetaSummary();
+    } catch (err) {
+      console.error('Error loading places:', err);
+      appState.places = [];
+      appState.placesLoaded = false;
+      updateMetaSummary(true);
+    }
+  }
+
+  function updateMetaSummary(isError) {
+    if (isError) {
+      metaSummaryEl.textContent = 'v0.4 • no places loaded';
+      return;
+    }
+    const count = appState.places.length;
+    metaSummaryEl.textContent = `v0.4 • ${count} place${count === 1 ? '' : 's'}`;
+  }
+
+  // ---- OPENING HOURS & FEASIBILITY ----
+
+  function isPlaceOpenForWindow(place, now, travelMin, windowMin) {
+    const dayMap = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const weekdayKey = dayMap[now.getDay()];
+    const hoursForDay = place.openingHours?.[weekdayKey] || [];
+
+    if (!hoursForDay || hoursForDay.length === 0) {
+      return { ok: false };
+    }
+
+    const nowMin = minutesSinceMidnight(now);
+    const arrivalMin = nowMin + travelMin;
+
+    // How long can we realistically stay given travel + user time?
+    const maxStayFromWindow = windowMin - travelMin;
+    if (maxStayFromWindow <= 0) return { ok: false };
+
+    // At least 30 minutes there, but not more than suggested minVisitMinutes
+    const desiredStayMin = Math.max(
+      30,
+      Math.min(place.minVisitMinutes || 60, maxStayFromWindow)
+    );
+
+    for (const [startStr, endStr] of hoursForDay) {
+      const start = parseTimeToMinutes(startStr);
+      const end = parseTimeToMinutes(endStr);
+
+      const departMin = arrivalMin + desiredStayMin;
+
+      if (arrivalMin >= start && departMin <= end) {
+        return {
+          ok: true,
+          closesAtMin: end,
+          arrivalMin,
+          stayMin: desiredStayMin
+        };
+      }
+    }
+
+    return { ok: false };
+  }
+
+  function evaluatePlace(place, now, timeAvailableMin, originCoords) {
+    const distanceKm = haversineKm(
+      originCoords.lat, originCoords.lon,
+      place.lat, place.lng
+    );
+
+    // Simple travel time model: 30 km/h effective
+    const travelMinRaw = (distanceKm / 30) * 60;
+    const travelMin = Math.max(5, travelMinRaw); // minimum 5 minutes
+
+    // If travel alone eats almost all the time, bail out
+    if (travelMin >= timeAvailableMin - 15) {
+      return { feasible: false };
+    }
+
+    const openInfo = isPlaceOpenForWindow(place, now, travelMin, timeAvailableMin);
+    if (!openInfo.ok) {
+      return { feasible: false };
+    }
+
+    const weatherScore = scorePlaceForWeather(place, appState.weather);
+
+    return {
+      feasible: true,
+      distanceKm,
+      travelMin,
+      weatherScore,
+      closesAtMin: openInfo.closesAtMin,
+      arrivalMin: openInfo.arrivalMin,
+      stayMin: openInfo.stayMin
+    };
+  }
+
+  // ---- SELECTION LOGIC ----
+
+  function chooseRandomPlace(skipId = null) {
+    if (!appState.placesLoaded || appState.places.length === 0) {
+      alert('No places loaded yet. Check console for errors.');
+      return null;
+    }
+
+    const category = getSelectedCategory(); // food | outdoor | culture | wildcard
+    const timeAvailableMin = getSelectedTimeMinutes();
+    const originCoords = getOriginCoords();
+    const now = new Date();
+
+    // 1. Category + rating filter
+    let candidates = appState.places.filter(p => {
+      if (p.tripAdvisorRating && p.tripAdvisorRating < 4.0) return false;
+      if (category !== 'wildcard' && p.category !== category) return false;
+      return true;
+    });
+
+    if (skipId) {
+      candidates = candidates.filter(p => p.id !== skipId);
+    }
+
+    if (candidates.length === 0) {
+      alert('No matching places for this category.');
+      return null;
+    }
+
+    // 2. Feasibility filter (time + opening hours)
+    let evaluated = candidates
+      .map(p => {
+        const evalInfo = evaluatePlace(p, now, timeAvailableMin, originCoords);
+        return { place: p, eval: evalInfo };
+      })
+      .filter(x => x.eval.feasible);
+
+    console.log('Candidates after feasibility:', evaluated.map(x => ({
+      id: x.place.id,
+      name: x.place.name,
+      distanceKm: x.eval.distanceKm.toFixed(1),
+      travelMin: x.eval.travelMin.toFixed(0),
+      closesAt: formatMinutesToHHMM(x.eval.closesAtMin),
+      stayMin: x.eval.stayMin.toFixed(0),
+      weatherScore: x.eval.weatherScore
+    })));
+
+    if (evaluated.length === 0) {
+      alert('Nothing feasible right now for this time window. Try a longer time or different category.');
+      return null;
+    }
+
+    // 3. Seen-today filter
+    const seen = loadSeenToday();
+    const unseen = evaluated.filter(x => !seen.ids.includes(x.place.id));
+
+    if (unseen.length > 0) {
+      evaluated = unseen;
+    }
+
+    // 4. Weather-weighted randomness
+    evaluated.sort((a, b) => b.eval.weatherScore - a.eval.weatherScore);
+
+    const topN = Math.min(5, evaluated.length);
+    const pool = evaluated.slice(0, topN);
+
+    const randIndex = Math.floor(Math.random() * pool.length);
+    const choice = pool[randIndex];
+
+    return choice;
+  }
+
+  function renderPlaceChoice(choice) {
+    const { place, eval: info } = choice;
+    appState.selectedPlace = place;
+
+    markPlaceSeen(place.id);
+
+    // Name & category
+    nameEl.textContent = place.name;
+    catEl.textContent = place.category === 'food'
+      ? 'Food & Drink'
+      : place.category === 'outdoor'
+        ? 'Outdoor / Nature'
+        : 'Culture & Sites';
+
+    // Rating
+    ratingEl.textContent = `⭐ ${place.tripAdvisorRating?.toFixed(1) ?? '4.0'} TripAdvisor`;
+
+    // Weather tag
+    let weatherTag = '';
+    if (place.indoorOutdoor === 'indoor') {
+      weatherTag = '🏠 Mostly indoor';
+    } else if (place.indoorOutdoor === 'outdoor') {
+      weatherTag = '☀ Outdoor spot';
+    } else {
+      weatherTag = '🌤 Indoor & outdoor mix';
+    }
+
+    if (appState.weather.preferIndoor && place.goodInRain) {
+      weatherTag += ' • good in rain';
+    } else if (appState.weather.preferOutdoor && place.goodForSun) {
+      weatherTag += ' • great in sun';
+    }
+
+    weatherTagEl.textContent = weatherTag;
+
+    // Status (open now, closes at)
+    const closesHHMM = formatMinutesToHHMM(info.closesAtMin);
+    statusEl.textContent = `Open now • closes ${closesHHMM}`;
+
+    // Description / notes
+    descEl.textContent = place.notes || '';
+
+    // Distance & time
+    const distText = info.distanceKm < 1
+      ? '< 1 km away'
+      : `${info.distanceKm.toFixed(1)} km away`;
+    const travelText = Math.round(info.travelMin);
+    const stayText = Math.round(info.stayMin);
+
+    distanceEl.textContent =
+      `~${travelText} min from you (${distText}) • allow ${stayText}+ min there`;
+
+    // Google Maps link
+    gmapsEl.href = place.gmapsUrl || '#';
+  }
+
+  // ---- BUTTON HANDLERS ----
 
   document.getElementById('surprise-btn').addEventListener('click', () => {
-    // Later: run selection pipeline.
-    // For now, just show that we know the weather context.
-    alert(
-      'Later this will pick a place.\n\n' +
-      'Weather preference right now:\n' +
-      (appState.weather.preferIndoor ? '- Prefer INDOOR options\n' : '') +
-      (appState.weather.preferOutdoor ? '- Prefer OUTDOOR / SUN options\n' : '') +
-      (appState.weather.label ? `\n(${appState.weather.label})` : '')
-    );
+    const choice = chooseRandomPlace();
+    if (!choice) return;
+    renderPlaceChoice(choice);
   });
 
   document.getElementById('another-btn').addEventListener('click', () => {
-    alert('Later: will pick a different place without resetting filters.');
+    if (!appState.selectedPlace) {
+      const choice = chooseRandomPlace();
+      if (!choice) return;
+      renderPlaceChoice(choice);
+      return;
+    }
+    const choice = chooseRandomPlace(appState.selectedPlace.id);
+    if (!choice) return;
+    renderPlaceChoice(choice);
   });
 
   document.getElementById('go-here-btn').addEventListener('click', () => {
-    alert('Later: will mark this place as “done today” so it is less likely to be suggested again.');
+    if (!appState.selectedPlace) {
+      alert('Pick a place first.');
+      return;
+    }
+    markPlaceSeen(appState.selectedPlace.id);
+    alert(`Nice. Marked "${appState.selectedPlace.name}" as done for today.`);
   });
 
   // ---- INITIALIZE ON LOAD ----
   (async function init() {
-    // Try to detect location once on load for better weather + travel estimates
-    await detectLocation();
+    await detectLocation();   // if it fails, we fall back to base locations
     await loadWeather();
+    await loadPlaces();
   })();
 </script>
 </body>

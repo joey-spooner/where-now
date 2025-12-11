@@ -367,7 +367,7 @@
     </footer>
   </div>
 
- <script>
+<script>
   // ---- CONSTANTS ----
   const PLACES_STORAGE_KEY = 'whereNow_places_v1';
   const SEEN_STORAGE_KEY = 'whereNow_seen_v1';
@@ -400,6 +400,7 @@
     selectedPlace: null
   };
 
+  // ---- DOM ELEMENTS ----
   const weatherSummaryEl = document.getElementById('weather-summary');
   const metaSummaryEl = document.getElementById('meta-summary');
 
@@ -697,11 +698,27 @@
 
   function updateMetaSummary(isError) {
     if (isError) {
-      metaSummaryEl.textContent = 'v0.4 • no places loaded';
+      metaSummaryEl.textContent = 'v0.5 • no places loaded';
       return;
     }
     const count = appState.places.length;
-    metaSummaryEl.textContent = `v0.4 • ${count} place${count === 1 ? '' : 's'}`;
+    metaSummaryEl.textContent = `v0.5 • ${count} place${count === 1 ? '' : 's'}`;
+  }
+
+  // ---- NO-RESULT DISPLAY ----
+
+  function showNoResult(message) {
+    appState.selectedPlace = null;
+
+    nameEl.textContent = 'No suggestion right now';
+    catEl.textContent = '';
+    ratingEl.textContent = '';
+    weatherTagEl.textContent = '';
+    statusEl.textContent = '';
+    descEl.textContent =
+      message || 'Try changing the category, increasing your time window, or picking a different base location.';
+    distanceEl.textContent = '';
+    gmapsEl.href = '#';
   }
 
   // ---- OPENING HOURS & FEASIBILITY ----
@@ -784,7 +801,7 @@
 
   function chooseRandomPlace(skipId = null) {
     if (!appState.placesLoaded || appState.places.length === 0) {
-      alert('No places loaded yet. Check console for errors.');
+      showNoResult('Places data is not loaded. Check your connection or JSON file.');
       return null;
     }
 
@@ -805,7 +822,7 @@
     }
 
     if (candidates.length === 0) {
-      alert('No matching places for this category.');
+      showNoResult('No matching places for this category. Try a different category or wildcard.');
       return null;
     }
 
@@ -828,7 +845,7 @@
     })));
 
     if (evaluated.length === 0) {
-      alert('Nothing feasible right now for this time window. Try a longer time or different category.');
+      showNoResult('Nothing feasible right now for this time window. Increase the time or choose a closer base location.');
       return null;
     }
 
@@ -867,7 +884,10 @@
         : 'Culture & Sites';
 
     // Rating
-    ratingEl.textContent = `⭐ ${place.tripAdvisorRating?.toFixed(1) ?? '4.0'} TripAdvisor`;
+    const ratingValue = typeof place.tripAdvisorRating === 'number'
+      ? place.tripAdvisorRating.toFixed(1)
+      : '4.0';
+    ratingEl.textContent = `⭐ ${ratingValue} TripAdvisor`;
 
     // Weather tag
     let weatherTag = '';
@@ -918,9 +938,9 @@
 
   document.getElementById('another-btn').addEventListener('click', () => {
     if (!appState.selectedPlace) {
-      const choice = chooseRandomPlace();
-      if (!choice) return;
-      renderPlaceChoice(choice);
+      const first = chooseRandomPlace();
+      if (!first) return;
+      renderPlaceChoice(first);
       return;
     }
     const choice = chooseRandomPlace(appState.selectedPlace.id);
@@ -936,6 +956,14 @@
     markPlaceSeen(appState.selectedPlace.id);
     alert(`Nice. Marked "${appState.selectedPlace.name}" as done for today.`);
   });
+
+  const resetBtn = document.getElementById('reset-today-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      localStorage.removeItem(SEEN_STORAGE_KEY);
+      showNoResult('Cleared today’s history. Hit “Surprise me” to start again.');
+    });
+  }
 
   // ---- INITIALIZE ON LOAD ----
   (async function init() {

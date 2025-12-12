@@ -552,9 +552,6 @@
     "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Santini+Carcavelos",
     "notes": "Famous Portuguese ice cream chain by the beach; good quick stop after a walk."
   },
-
-  // --- OUTDOOR / WALKS / HIKES ---
-
   {
     "id": "passeio-maritimo-oeiras",
     "name": "Passeio Marítimo de Oeiras",
@@ -675,9 +672,6 @@
     "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Parque+Florestal+de+Monsanto",
     "notes": "Trails and viewpoints in Lisbon’s big forest park; quick “hike” without leaving the city."
   },
-
-  // --- MUSEUMS / INDOOR CULTURE ---
-
   {
     "id": "museu-nacional-azulejo",
     "name": "Museu Nacional do Azulejo",

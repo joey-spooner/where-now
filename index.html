@@ -433,6 +433,7 @@
   }
 
   function formatMinutesToHHMM(mins) {
+    if (mins == null) return '';
     const h = Math.floor(mins / 60) % 24;
     const m = mins % 60;
     return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
@@ -698,11 +699,11 @@
 
   function updateMetaSummary(isError) {
     if (isError) {
-      metaSummaryEl.textContent = 'v0.5 • no places loaded';
+      metaSummaryEl.textContent = 'v0.6 • no places loaded';
       return;
     }
     const count = appState.places.length;
-    metaSummaryEl.textContent = `v0.5 • ${count} place${count === 1 ? '' : 's'}`;
+    metaSummaryEl.textContent = `v0.6 • ${count} place${count === 1 ? '' : 's'}`;
   }
 
   // ---- NO-RESULT DISPLAY ----
@@ -721,49 +722,10 @@
     gmapsEl.href = '#';
   }
 
-  // ---- OPENING HOURS & FEASIBILITY ----
+  // ---- EVALUATION (NO HARD FEASIBILITY FILTER) ----
 
-  function isPlaceOpenForWindow(place, now, travelMin, windowMin) {
-    const dayMap = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-    const weekdayKey = dayMap[now.getDay()];
-    const hoursForDay = place.openingHours?.[weekdayKey] || [];
-
-    if (!hoursForDay || hoursForDay.length === 0) {
-      return { ok: false };
-    }
-
-    const nowMin = minutesSinceMidnight(now);
-    const arrivalMin = nowMin + travelMin;
-
-    // How long can we realistically stay given travel + user time?
-    const maxStayFromWindow = windowMin - travelMin;
-    if (maxStayFromWindow <= 0) return { ok: false };
-
-    // At least 30 minutes there, but not more than suggested minVisitMinutes
-    const desiredStayMin = Math.max(
-      30,
-      Math.min(place.minVisitMinutes || 60, maxStayFromWindow)
-    );
-
-    for (const [startStr, endStr] of hoursForDay) {
-      const start = parseTimeToMinutes(startStr);
-      const end = parseTimeToMinutes(endStr);
-
-      const departMin = arrivalMin + desiredStayMin;
-
-      if (arrivalMin >= start && departMin <= end) {
-        return {
-          ok: true,
-          closesAtMin: end,
-          arrivalMin,
-          stayMin: desiredStayMin
-        };
-      }
-    }
-
-    return { ok: false };
-  }
-
+  // We now IGNORE opening hours and time window for feasibility.
+  // We just compute distance, a rough travel time, and a weather score.
   function evaluatePlace(place, now, timeAvailableMin, originCoords) {
     const distanceKm = haversineKm(
       originCoords.lat, originCoords.lon,
@@ -774,26 +736,26 @@
     const travelMinRaw = (distanceKm / 30) * 60;
     const travelMin = Math.max(5, travelMinRaw); // minimum 5 minutes
 
-    // If travel alone eats almost all the time, bail out
-    if (travelMin >= timeAvailableMin - 15) {
-      return { feasible: false };
-    }
+    const rawStay = timeAvailableMin - travelMin;
+    const suggestedMin = place.minVisitMinutes || 60;
+    let stayMin;
 
-    const openInfo = isPlaceOpenForWindow(place, now, travelMin, timeAvailableMin);
-    if (!openInfo.ok) {
-      return { feasible: false };
+    if (rawStay > 0) {
+      stayMin = Math.max(30, Math.min(suggestedMin, rawStay));
+    } else {
+      stayMin = suggestedMin;
     }
 
     const weatherScore = scorePlaceForWeather(place, appState.weather);
 
     return {
-      feasible: true,
+      feasible: true, // ALWAYS true now
       distanceKm,
       travelMin,
       weatherScore,
-      closesAtMin: openInfo.closesAtMin,
-      arrivalMin: openInfo.arrivalMin,
-      stayMin: openInfo.stayMin
+      closesAtMin: null,  // we’re not checking hours anymore
+      arrivalMin: null,
+      stayMin
     };
   }
 
@@ -821,33 +783,20 @@
       candidates = candidates.filter(p => p.id !== skipId);
     }
 
+    console.log('Candidates after category/rating filter:', candidates.length, 'category:', category);
+
     if (candidates.length === 0) {
       showNoResult('No matching places for this category. Try a different category or wildcard.');
       return null;
     }
 
-    // 2. Feasibility filter (time + opening hours)
-    let evaluated = candidates
-      .map(p => {
-        const evalInfo = evaluatePlace(p, now, timeAvailableMin, originCoords);
-        return { place: p, eval: evalInfo };
-      })
-      .filter(x => x.eval.feasible);
+    // 2. Evaluate (no feasibility filter anymore)
+    let evaluated = candidates.map(p => {
+      const evalInfo = evaluatePlace(p, now, timeAvailableMin, originCoords);
+      return { place: p, eval: evalInfo };
+    });
 
-    console.log('Candidates after feasibility:', evaluated.map(x => ({
-      id: x.place.id,
-      name: x.place.name,
-      distanceKm: x.eval.distanceKm.toFixed(1),
-      travelMin: x.eval.travelMin.toFixed(0),
-      closesAt: formatMinutesToHHMM(x.eval.closesAtMin),
-      stayMin: x.eval.stayMin.toFixed(0),
-      weatherScore: x.eval.weatherScore
-    })));
-
-    if (evaluated.length === 0) {
-      showNoResult('Nothing feasible right now for this time window. Increase the time or choose a closer base location.');
-      return null;
-    }
+    console.log('Evaluated places (no feasibility filter):', evaluated.length);
 
     // 3. Seen-today filter
     const seen = loadSeenToday();
@@ -855,6 +804,11 @@
 
     if (unseen.length > 0) {
       evaluated = unseen;
+    }
+
+    if (evaluated.length === 0) {
+      showNoResult('You’ve seen everything in this category today. Reset today’s suggestions or switch category.');
+      return null;
     }
 
     // 4. Weather-weighted randomness
@@ -907,9 +861,8 @@
 
     weatherTagEl.textContent = weatherTag;
 
-    // Status (open now, closes at)
-    const closesHHMM = formatMinutesToHHMM(info.closesAtMin);
-    statusEl.textContent = `Open now • closes ${closesHHMM}`;
+    // Status (we're not checking exact hours now)
+    statusEl.textContent = 'Check opening hours before you go';
 
     // Description / notes
     descEl.textContent = place.notes || '';
@@ -922,7 +875,7 @@
     const stayText = Math.round(info.stayMin);
 
     distanceEl.textContent =
-      `~${travelText} min from you (${distText}) • allow ${stayText}+ min there`;
+      `~${travelText} min from you (${distText}) • allow around ${stayText} min there`;
 
     // Google Maps link
     gmapsEl.href = place.gmapsUrl || '#';

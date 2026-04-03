@@ -1,0 +1,3219 @@
+[
+  {
+    "id": "rijksmuseum",
+    "name": "Rijksmuseum",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.36,
+    "lng": 4.8852,
+    "tripAdvisorRating": 4.8,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 150,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Rijksmuseum+Amsterdam",
+    "notes": "The Dutch national museum; Rembrandt, Vermeer and the Golden Age collection. Book tickets well in advance."
+  },
+  {
+    "id": "anne-frank-house",
+    "name": "Anne Frank House",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3752,
+    "lng": 4.884,
+    "tripAdvisorRating": 4.7,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Anne+Frank+House+Amsterdam",
+    "notes": "The hiding place where Anne Frank wrote her diary; deeply moving. Timed-entry tickets required, book weeks ahead."
+  },
+  {
+    "id": "van-gogh-museum",
+    "name": "Van Gogh Museum",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3584,
+    "lng": 4.8811,
+    "tripAdvisorRating": 4.7,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 120,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "21:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "21:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Van+Gogh+Museum+Amsterdam",
+    "notes": "World's largest collection of Van Gogh's work. Pre-booking essential; sells out days in advance."
+  },
+  {
+    "id": "vondelpark",
+    "name": "Vondelpark",
+    "category": "outdoor",
+    "region": "amsterdam",
+    "lat": 52.3579,
+    "lng": 4.8686,
+    "tripAdvisorRating": 4.7,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Vondelpark+Amsterdam",
+    "notes": "Amsterdam's most popular park; great for cycling, picnics and people-watching. Free open-air concerts in summer."
+  },
+  {
+    "id": "amsterdam-canals",
+    "name": "Grachtengordel – Canal Ring",
+    "category": "outdoor",
+    "region": "amsterdam",
+    "lat": 52.37,
+    "lng": 4.883,
+    "tripAdvisorRating": 4.8,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Grachtengordel+Amsterdam",
+    "notes": "UNESCO-listed 17th-century canal ring; stroll or rent a bike along Prinsengracht and Keizersgracht."
+  },
+  {
+    "id": "royal-palace-amsterdam",
+    "name": "Royal Palace Amsterdam",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3731,
+    "lng": 4.8913,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Royal+Palace+Amsterdam+Dam+Square",
+    "notes": "17th-century palace on Dam Square; opulent interiors with Golden Age art. Check ahead as it closes for royal events."
+  },
+  {
+    "id": "stedelijk-museum",
+    "name": "Stedelijk Museum Amsterdam",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.358,
+    "lng": 4.8797,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Stedelijk+Museum+Amsterdam",
+    "notes": "Modern and contemporary art from Mondrian to Basquiat; the bathtub building is iconic."
+  },
+  {
+    "id": "begijnhof",
+    "name": "Begijnhof",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3697,
+    "lng": 4.892,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "mixed",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Begijnhof+Amsterdam",
+    "notes": "Hidden medieval courtyard in the city centre; tranquil garden with one of Amsterdam's oldest wooden houses."
+  },
+  {
+    "id": "artis-zoo",
+    "name": "ARTIS Amsterdam Royal Zoo",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3659,
+    "lng": 4.9164,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 180,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=ARTIS+Amsterdam+Royal+Zoo",
+    "notes": "Europe's oldest zoo (1838); also has a planetarium and aquarium within the grounds."
+  },
+  {
+    "id": "heineken-experience",
+    "name": "Heineken Experience",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.358,
+    "lng": 4.8918,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [
+        [
+          "10:30",
+          "19:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:30",
+          "19:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:30",
+          "19:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:30",
+          "19:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:30",
+          "21:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:30",
+          "21:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:30",
+          "19:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Heineken+Experience+Amsterdam",
+    "notes": "Interactive brewery tour in the original 1867 Heineken building; includes two beers in the price."
+  },
+  {
+    "id": "cafe-de-jaren",
+    "name": "Café de Jaren",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3686,
+    "lng": 4.897,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "02:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "02:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+de+Jaren+Amsterdam",
+    "notes": "Grand café on the Amstel with a large sunny terrace; great for reading, brunch or afternoon drinks."
+  },
+  {
+    "id": "foodhallen",
+    "name": "Foodhallen",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3627,
+    "lng": 4.8664,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "11:00",
+          "23:30"
+        ]
+      ],
+      "tue": [
+        [
+          "11:00",
+          "23:30"
+        ]
+      ],
+      "wed": [
+        [
+          "11:00",
+          "23:30"
+        ]
+      ],
+      "thu": [
+        [
+          "11:00",
+          "23:30"
+        ]
+      ],
+      "fri": [
+        [
+          "11:00",
+          "01:00"
+        ]
+      ],
+      "sat": [
+        [
+          "11:00",
+          "01:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "23:30"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Foodhallen+Amsterdam",
+    "notes": "Indoor food market in a former tram depot in Oud-West; 21 food stands from ramen to oysters."
+  },
+  {
+    "id": "restaurant-moeders",
+    "name": "Restaurant Moeders",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3717,
+    "lng": 4.8776,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 75,
+    "openingHours": {
+      "mon": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant+Moeders+Amsterdam",
+    "notes": "Beloved Dutch home-cooking spot in the Jordaan; walls plastered with customer photos of their mothers."
+  },
+  {
+    "id": "pancakes-amsterdam",
+    "name": "Pancakes Amsterdam",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3663,
+    "lng": 4.884,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Pancakes+Amsterdam+Berenstraat",
+    "notes": "Classic Dutch pancakes (thin, large, savoury and sweet) in the Nine Streets shopping area."
+  },
+  {
+    "id": "albert-cuyp-market",
+    "name": "Albert Cuypmarkt",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3555,
+    "lng": 4.8953,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sun": []
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Albert+Cuypmarkt+Amsterdam",
+    "notes": "The Netherlands' largest street market; cheap street food, stroopwafels, herring and fresh produce."
+  },
+  {
+    "id": "cafe-t-smalle",
+    "name": "Café 't Smalle",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3745,
+    "lng": 4.8839,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "02:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "02:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+t+Smalle+Egelantiersgracht+Amsterdam",
+    "notes": "Classic 18th-century brown café in the Jordaan with a floating canal terrace; perfect for jenever tasting."
+  },
+  {
+    "id": "worst-wijncafe",
+    "name": "Worst Wijncafé",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3607,
+    "lng": 4.8939,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "16:00",
+          "23:00"
+        ]
+      ],
+      "wed": [
+        [
+          "16:00",
+          "23:00"
+        ]
+      ],
+      "thu": [
+        [
+          "16:00",
+          "23:00"
+        ]
+      ],
+      "fri": [
+        [
+          "14:00",
+          "00:00"
+        ]
+      ],
+      "sat": [
+        [
+          "14:00",
+          "00:00"
+        ]
+      ],
+      "sun": [
+        [
+          "14:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Worst+Wijncafe+Amsterdam",
+    "notes": "Cosy natural wine bar with charcuterie boards; hidden-gem neighbourhood spot near Leidseplein."
+  },
+  {
+    "id": "winkel-43",
+    "name": "Winkel 43",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3755,
+    "lng": 4.8893,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "07:00",
+          "01:00"
+        ]
+      ],
+      "tue": [
+        [
+          "08:00",
+          "01:00"
+        ]
+      ],
+      "wed": [
+        [
+          "08:00",
+          "01:00"
+        ]
+      ],
+      "thu": [
+        [
+          "08:00",
+          "01:00"
+        ]
+      ],
+      "fri": [
+        [
+          "08:00",
+          "02:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:00",
+          "02:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Winkel+43+Amsterdam+Noordermarkt",
+    "notes": "Famous for arguably Amsterdam's best apple pie; right next to the Noordermarkt with a sunny terrace."
+  },
+  {
+    "id": "drovers-dog",
+    "name": "Drovers Dog",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.364,
+    "lng": 4.868,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Drovers+Dog+Amsterdam",
+    "notes": "Australian-style brunch café in Oud-West; excellent eggs, specialty coffee and fresh juices."
+  },
+  {
+    "id": "bakers-and-roasters",
+    "name": "Bakers & Roasters",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3655,
+    "lng": 4.9133,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ],
+      "tue": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ],
+      "wed": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ],
+      "thu": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ],
+      "fri": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ],
+      "sat": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ],
+      "sun": [
+        [
+          "08:30",
+          "16:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Bakers+and+Roasters+Amsterdam",
+    "notes": "Popular brunch spot in Kadijksplein; Brazilian-Kiwi fusion with great specialty coffee. Expect a queue on weekends."
+  },
+  {
+    "id": "cafe-americain",
+    "name": "Café Americain",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3622,
+    "lng": 4.8821,
+    "tripAdvisorRating": 4.2,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "07:00",
+          "23:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "23:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "23:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "23:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "00:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:00",
+          "00:00"
+        ]
+      ],
+      "sun": [
+        [
+          "07:00",
+          "23:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+Americain+Amsterdam+American+Hotel",
+    "notes": "Art Nouveau grand café in the American Hotel on Leidsekade; stunning interior with stained glass."
+  },
+  {
+    "id": "restaurant-rijks",
+    "name": "Restaurant Rijks",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3598,
+    "lng": 4.8852,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "15:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant+Rijks+Amsterdam",
+    "notes": "Michelin-starred restaurant inside the Rijksmuseum; modern Dutch cuisine with seasonal tasting menus."
+  },
+  {
+    "id": "gebr-hartering",
+    "name": "Gebroeders Hartering",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3708,
+    "lng": 4.9071,
+    "tripAdvisorRating": 4.6,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [],
+      "tue": [],
+      "wed": [
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "18:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "18:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Gebroeders+Hartering+Amsterdam",
+    "notes": "Intimate wine-driven Dutch kitchen on Peperstraat; no fixed menu, just what's fresh. Reserve ahead."
+  },
+  {
+    "id": "de-kas",
+    "name": "Restaurant De Kas",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3537,
+    "lng": 4.9262,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 120,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "12:00",
+          "14:00"
+        ],
+        [
+          "18:30",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "12:00",
+          "14:00"
+        ],
+        [
+          "18:30",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "12:00",
+          "14:00"
+        ],
+        [
+          "18:30",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "14:00"
+        ],
+        [
+          "18:30",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "14:00"
+        ],
+        [
+          "18:30",
+          "22:00"
+        ]
+      ],
+      "sun": []
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant+De+Kas+Amsterdam",
+    "notes": "Farm-to-table dining inside a stunning 1926 greenhouse; ingredients grown on-site. Fixed daily menu."
+  },
+  {
+    "id": "pllek",
+    "name": "Pllek",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3914,
+    "lng": 4.9065,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "12:00",
+          "00:00"
+        ]
+      ],
+      "tue": [
+        [
+          "12:00",
+          "00:00"
+        ]
+      ],
+      "wed": [
+        [
+          "12:00",
+          "00:00"
+        ]
+      ],
+      "thu": [
+        [
+          "12:00",
+          "00:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "01:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "01:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "00:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Pllek+Amsterdam+Noord",
+    "notes": "Trendy container restaurant and bar on the IJ river in Noord; sandy beach terrace, good burgers and cocktails."
+  },
+  {
+    "id": "la-perla",
+    "name": "La Perla",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3738,
+    "lng": 4.8813,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "17:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "17:00",
+          "23:00"
+        ]
+      ],
+      "sat": [
+        [
+          "13:00",
+          "23:00"
+        ]
+      ],
+      "sun": [
+        [
+          "13:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=La+Perla+Amsterdam+Tweede+Tuindwarsstraat",
+    "notes": "Beloved wood-fired Neapolitan pizza in the Jordaan; tiny, always busy, no reservations."
+  },
+  {
+    "id": "febo",
+    "name": "FEBO Automatiek",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3734,
+    "lng": 4.8929,
+    "tripAdvisorRating": 4.0,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 10,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "03:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "03:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "03:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "03:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "04:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "04:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "03:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=FEBO+Amsterdam+Leidsestraat",
+    "notes": "Iconic Dutch fast-food automat; drop a coin, pull out a kroket or frikandel. A true Amsterdam experience."
+  },
+  {
+    "id": "wil-graanstra-friteshuis",
+    "name": "Wil Graanstra Friteshuis",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3653,
+    "lng": 4.874,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 15,
+    "openingHours": {
+      "mon": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ],
+      "tue": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ],
+      "fri": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ],
+      "sat": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "18:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Wil+Graanstra+Friteshuis+Amsterdam",
+    "notes": "Legendary frites stand at the Vondelpark entrance since 1956; get them with mayonnaise (patatje oorlog)."
+  },
+  {
+    "id": "restaurant-breda",
+    "name": "Restaurant Breda",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3711,
+    "lng": 4.8979,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "18:00",
+          "22:30"
+        ]
+      ],
+      "wed": [
+        [
+          "18:00",
+          "22:30"
+        ]
+      ],
+      "thu": [
+        [
+          "18:00",
+          "22:30"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:30"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "15:00"
+        ],
+        [
+          "18:00",
+          "22:30"
+        ]
+      ],
+      "sun": []
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant+Breda+Amsterdam",
+    "notes": "Modern European fine dining on Nes; tasting menus with a focus on fermentation and Dutch produce."
+  },
+  {
+    "id": "bulldog-coffeeshop",
+    "name": "The Bulldog Coffeeshop",
+    "category": "bar",
+    "region": "amsterdam",
+    "lat": 52.3728,
+    "lng": 4.8957,
+    "tripAdvisorRating": 3.8,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "01:00"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "01:00"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "01:00"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "01:00"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "03:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "03:00"
+        ]
+      ],
+      "sun": [
+        [
+          "09:00",
+          "01:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=The+Bulldog+Coffeeshop+Amsterdam+Leidseplein",
+    "notes": "Amsterdam's most famous coffeeshop chain; touristy but iconic, multiple locations near Leidseplein."
+  },
+  {
+    "id": "grey-area",
+    "name": "Grey Area",
+    "category": "bar",
+    "region": "amsterdam",
+    "lat": 52.3727,
+    "lng": 4.8915,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ],
+      "tue": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ],
+      "wed": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ],
+      "thu": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Grey+Area+Coffeeshop+Amsterdam",
+    "notes": "Tiny American-run coffeeshop in the Jordaan; cult following for high-quality strains. Often a small queue outside."
+  },
+  {
+    "id": "dampkring",
+    "name": "Dampkring Coffeeshop",
+    "category": "bar",
+    "region": "amsterdam",
+    "lat": 52.3687,
+    "lng": 4.891,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "01:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Dampkring+Coffeeshop+Amsterdam+Handboogstraat",
+    "notes": "Featured in Ocean's Twelve; cosy interior with good quality cannabis and a relaxed vibe."
+  },
+  {
+    "id": "paradox",
+    "name": "Paradox Coffeeshop",
+    "category": "bar",
+    "region": "amsterdam",
+    "lat": 52.3741,
+    "lng": 4.8803,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Paradox+Coffeeshop+Amsterdam+Jordaan",
+    "notes": "Mellow neighbourhood coffeeshop in the Jordaan; locals' favourite, also serves good sandwiches and fresh juice."
+  },
+  {
+    "id": "boerejongens",
+    "name": "Boerejongens Coffeeshop",
+    "category": "bar",
+    "region": "amsterdam",
+    "lat": 52.3546,
+    "lng": 4.9006,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Boerejongens+Coffeeshop+Amsterdam",
+    "notes": "Award-winning coffeeshop with multiple locations; known for top-shelf product and professional setup."
+  },
+  {
+    "id": "noordermarkt",
+    "name": "Noordermarkt",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3757,
+    "lng": 4.8882,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "13:00"
+        ]
+      ],
+      "tue": [],
+      "wed": [],
+      "thu": [],
+      "fri": [],
+      "sat": [
+        [
+          "09:00",
+          "16:00"
+        ]
+      ],
+      "sun": []
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Noordermarkt+Amsterdam",
+    "notes": "Monday antiques market and Saturday organic farmers' market around the 17th-century Noorderkerk."
+  },
+  {
+    "id": "ij-ferry",
+    "name": "Free IJ Ferry to Amsterdam Noord",
+    "category": "outdoor",
+    "region": "amsterdam",
+    "lat": 52.3791,
+    "lng": 4.9008,
+    "tripAdvisorRating": 4.6,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 20,
+    "openingHours": {
+      "mon": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ],
+      "tue": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ],
+      "wed": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ],
+      "thu": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ],
+      "fri": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ],
+      "sat": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ],
+      "sun": [
+        [
+          "06:30",
+          "00:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=GVB+IJ+Ferry+Amsterdam+Centraal",
+    "notes": "Free public ferry from behind Centraal Station to Amsterdam Noord; great views of the IJ and easy access to NDSM and EYE."
+  },
+  {
+    "id": "bloemenmarkt",
+    "name": "Bloemenmarkt – Floating Flower Market",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3659,
+    "lng": 4.8941,
+    "tripAdvisorRating": 4.2,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "09:00",
+          "17:30"
+        ]
+      ],
+      "tue": [
+        [
+          "09:00",
+          "17:30"
+        ]
+      ],
+      "wed": [
+        [
+          "09:00",
+          "17:30"
+        ]
+      ],
+      "thu": [
+        [
+          "09:00",
+          "17:30"
+        ]
+      ],
+      "fri": [
+        [
+          "09:00",
+          "17:30"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "17:30"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "17:30"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Bloemenmarkt+Amsterdam",
+    "notes": "World's only floating flower market on the Singel canal; tulip bulbs, Dutch souvenirs and fresh cut flowers."
+  },
+  {
+    "id": "eye-film-museum",
+    "name": "EYE Filmmuseum",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3839,
+    "lng": 4.9001,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "18:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=EYE+Filmmuseum+Amsterdam",
+    "notes": "Striking white building on the IJ riverbank in Noord; film screenings, exhibitions and great river-view café."
+  },
+  {
+    "id": "nemo-science-museum",
+    "name": "NEMO Science Museum",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3741,
+    "lng": 4.9121,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 120,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "10:00",
+          "17:30"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "17:30"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "17:30"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "17:30"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "17:30"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "17:30"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=NEMO+Science+Museum+Amsterdam",
+    "notes": "Hands-on science museum in a ship-shaped green building; rooftop terrace with great harbour views (free entry)."
+  },
+  {
+    "id": "broodje-mokum",
+    "name": "Broodje Mokum",
+    "category": "food",
+    "region": "amsterdam",
+    "lat": 52.3703,
+    "lng": 4.8974,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 20,
+    "openingHours": {
+      "mon": [
+        [
+          "08:00",
+          "18:00"
+        ]
+      ],
+      "tue": [
+        [
+          "08:00",
+          "18:00"
+        ]
+      ],
+      "wed": [
+        [
+          "08:00",
+          "18:00"
+        ]
+      ],
+      "thu": [
+        [
+          "08:00",
+          "18:00"
+        ]
+      ],
+      "fri": [
+        [
+          "08:00",
+          "18:00"
+        ]
+      ],
+      "sat": [
+        [
+          "09:00",
+          "18:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Broodje+Mokum+Amsterdam",
+    "notes": "Popular Amsterdam sandwich shop near Spui; try the classic uitsmijter or a fresh Dutch herring roll."
+  },
+  {
+    "id": "schiphol-plaza",
+    "name": "Schiphol Plaza Shopping",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3096,
+    "lng": 4.7616,
+    "tripAdvisorRating": 3.9,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 45,
+    "openingHours": {
+      "mon": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "07:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Schiphol+Plaza+Amsterdam+Airport",
+    "notes": "Large shopping and dining centre connected to Schiphol arrivals hall; accessible without an air ticket."
+  },
+  {
+    "id": "rijksmuseum-schiphol",
+    "name": "Rijksmuseum Schiphol (Airport Gallery)",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3097,
+    "lng": 4.7638,
+    "tripAdvisorRating": 4.7,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ],
+      "sat": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ],
+      "sun": [
+        [
+          "07:00",
+          "20:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Rijksmuseum+Schiphol+Airport",
+    "notes": "Small but genuine Rijksmuseum gallery in Schiphol's departure lounge (post-security); free entry, real masterpieces."
+  },
+  {
+    "id": "amsterdamse-bos",
+    "name": "Amsterdamse Bos",
+    "category": "outdoor",
+    "region": "schiphol",
+    "lat": 52.3182,
+    "lng": 4.8306,
+    "tripAdvisorRating": 4.6,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Amsterdamse+Bos",
+    "notes": "Vast urban forest south of Amsterdam near Schiphol; cycling, rowing, goat farm and open-air theatre."
+  },
+  {
+    "id": "cobra-museum",
+    "name": "Cobra Museum of Modern Art",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3121,
+    "lng": 4.8586,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 75,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "11:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "11:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "11:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "11:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "11:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Cobra+Museum+Amstelveen",
+    "notes": "Museum dedicated to the CoBrA art movement in Amstelveen; easy tram connection from Amsterdam or 10 min from Schiphol by taxi."
+  },
+  {
+    "id": "keukenhof",
+    "name": "Keukenhof Gardens",
+    "category": "outdoor",
+    "region": "schiphol",
+    "lat": 52.2697,
+    "lng": 4.5463,
+    "tripAdvisorRating": 4.8,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 180,
+    "openingHours": {
+      "mon": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ],
+      "tue": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ],
+      "wed": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ],
+      "thu": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ],
+      "fri": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ],
+      "sat": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ],
+      "sun": [
+        [
+          "08:00",
+          "19:30"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Keukenhof+Gardens+Lisse",
+    "notes": "World-famous tulip garden open only March–May; 30 min from Schiphol by direct bus (Bus 858). Spectacular in spring."
+  },
+  {
+    "id": "museum-cruquius",
+    "name": "Museum De Cruquius",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3303,
+    "lng": 4.6496,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Museum+De+Cruquius+Heemstede",
+    "notes": "Historic steam pumping station that drained the Haarlemmermeer; fascinating Dutch water-management history."
+  },
+  {
+    "id": "mcarthurglen-schiphol",
+    "name": "McArthurGlen Designer Outlet Amsterdam",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3014,
+    "lng": 4.773,
+    "tripAdvisorRating": 4.1,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "20:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "20:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "20:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "20:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "20:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "20:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "20:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=McArthurGlen+Designer+Outlet+Amsterdam+Airport",
+    "notes": "Designer outlet mall a short walk from Schiphol; 100+ brands at discounted prices, accessible by shuttle or on foot."
+  },
+  {
+    "id": "cafe-rustende-jager",
+    "name": "Café-Restaurant De Rustende Jager",
+    "category": "food",
+    "region": "schiphol",
+    "lat": 52.3366,
+    "lng": 4.7815,
+    "tripAdvisorRating": 4.1,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "sun": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=De+Rustende+Jager+Badhoevedorp",
+    "notes": "Traditional Dutch brasserie in Badhoevedorp village, walkable from the Vienna House Easy hotel; hearty Dutch meals."
+  },
+  {
+    "id": "seinpost-hoofddorp",
+    "name": "Restaurant Seinpost",
+    "category": "food",
+    "region": "schiphol",
+    "lat": 52.3059,
+    "lng": 4.6932,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 75,
+    "openingHours": {
+      "mon": [],
+      "tue": [
+        [
+          "17:30",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "17:30",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "17:30",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "12:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "12:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "20:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Restaurant+Seinpost+Hoofddorp",
+    "notes": "Good local restaurant in Hoofddorp town centre; 10 min taxi from Schiphol, solid Dutch-European menu."
+  },
+  {
+    "id": "haarlem-grote-markt",
+    "name": "Haarlem Grote Markt & St. Bavo Church",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3813,
+    "lng": 4.6356,
+    "tripAdvisorRating": 4.7,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": true,
+    "minVisitMinutes": 120,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "17:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Grote+Markt+Haarlem",
+    "notes": "Charming city just 15 min from Schiphol by train; beautiful Gothic church, great cafés and the Frans Hals Museum."
+  },
+  {
+    "id": "aalsmeer-flower-auction",
+    "name": "Royal FloraHolland Flower Auction Aalsmeer",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.2692,
+    "lng": 4.7586,
+    "tripAdvisorRating": 4.3,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 90,
+    "openingHours": {
+      "mon": [
+        [
+          "07:00",
+          "11:00"
+        ]
+      ],
+      "tue": [
+        [
+          "07:00",
+          "11:00"
+        ]
+      ],
+      "wed": [
+        [
+          "07:00",
+          "11:00"
+        ]
+      ],
+      "thu": [
+        [
+          "07:00",
+          "11:00"
+        ]
+      ],
+      "fri": [
+        [
+          "07:00",
+          "11:00"
+        ]
+      ],
+      "sat": [],
+      "sun": []
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Royal+FloraHolland+Aalsmeer+Flower+Auction",
+    "notes": "World's largest flower auction (building bigger than Monaco); visitor gallery open weekday mornings, 20 min from Schiphol."
+  },
+  {
+    "id": "bastion-hotel-restaurant",
+    "name": "Grand Café Brinkmann Hoofddorp",
+    "category": "food",
+    "region": "schiphol",
+    "lat": 52.3051,
+    "lng": 4.6907,
+    "tripAdvisorRating": 4.0,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "23:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "00:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "22:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Grand+Cafe+Brinkmann+Hoofddorp",
+    "notes": "Grand café on Hoofddorp's main square; Dutch standards, good beer selection, lively atmosphere on weekend evenings."
+  },
+  {
+    "id": "ouderkerk-aan-de-amstel",
+    "name": "Ouderkerk aan de Amstel",
+    "category": "outdoor",
+    "region": "schiphol",
+    "lat": 52.2986,
+    "lng": 4.9132,
+    "tripAdvisorRating": 4.5,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 60,
+    "openingHours": {
+      "mon": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Ouderkerk+aan+de+Amstel",
+    "notes": "Picturesque village on the Amstel river south of Amsterdam; cycle there along the river, stop at a terrace café."
+  },
+  {
+    "id": "badhoevedorp-windmill",
+    "name": "Molen De Zwaan – Badhoevedorp",
+    "category": "culture",
+    "region": "schiphol",
+    "lat": 52.3341,
+    "lng": 4.7851,
+    "tripAdvisorRating": 4.2,
+    "indoorOutdoor": "outdoor",
+    "goodInRain": false,
+    "goodForSun": true,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [],
+      "tue": [],
+      "wed": [],
+      "thu": [],
+      "fri": [],
+      "sat": [
+        [
+          "10:00",
+          "16:00"
+        ]
+      ],
+      "sun": [
+        [
+          "12:00",
+          "16:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Molen+De+Zwaan+Badhoevedorp",
+    "notes": "Working windmill in Badhoevedorp village, a 10-min walk from the Vienna House Easy hotel; open weekends."
+  },
+  {
+    "id": "burger-bar-schiphol",
+    "name": "Burgerlord – Schiphol Area",
+    "category": "food",
+    "region": "schiphol",
+    "lat": 52.3095,
+    "lng": 4.7622,
+    "tripAdvisorRating": 4.1,
+    "indoorOutdoor": "indoor",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 30,
+    "openingHours": {
+      "mon": [
+        [
+          "10:00",
+          "21:00"
+        ]
+      ],
+      "tue": [
+        [
+          "10:00",
+          "21:00"
+        ]
+      ],
+      "wed": [
+        [
+          "10:00",
+          "21:00"
+        ]
+      ],
+      "thu": [
+        [
+          "10:00",
+          "21:00"
+        ]
+      ],
+      "fri": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sat": [
+        [
+          "10:00",
+          "22:00"
+        ]
+      ],
+      "sun": [
+        [
+          "11:00",
+          "21:00"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Burgerlord+Schiphol+Plaza",
+    "notes": "Popular Dutch smash-burger chain in Schiphol Plaza; quick, good quality, much better than typical airport food."
+  },
+  {
+    "id": "panorama-amsterdam-centraal",
+    "name": "Amsterdam Centraal Station",
+    "category": "culture",
+    "region": "amsterdam",
+    "lat": 52.3791,
+    "lng": 4.9003,
+    "tripAdvisorRating": 4.4,
+    "indoorOutdoor": "mixed",
+    "goodInRain": true,
+    "goodForSun": false,
+    "minVisitMinutes": 20,
+    "openingHours": {
+      "mon": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "tue": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "wed": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "thu": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "fri": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sat": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ],
+      "sun": [
+        [
+          "00:00",
+          "23:59"
+        ]
+      ]
+    },
+    "gmapsUrl": "https://www.google.com/maps/search/?api=1&query=Amsterdam+Centraal+Station",
+    "notes": "Iconic 1889 neo-Gothic station; the main hub for trams, metro, trains and ferries. Grab a herring at a nearby stand."
+  }
+]
